@@ -1,0 +1,13 @@
+{
+    "clusters" : {
+        "dev_cluster" : {
+            "host" : "history_server_dev_host",
+            "port" : 19888
+        },
+
+        "prod_cluster" : {
+            "host" : "history_server_prod_host",
+            "port" : 19888
+        }
+    }
+}

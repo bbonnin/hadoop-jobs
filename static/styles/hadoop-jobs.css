@@ -1,0 +1,29 @@
+body {
+    padding-top : 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
+
+.cluster {
+    background-color: rgb(81, 81, 81);
+    color: rgb(255, 255, 255);
+    border-color: rgb(17, 17, 17);
+}
+
+.icon-refresh-animate {
+    animation-name: rotateThis;
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes rotateThis {
+    from { transform: scale( 1 ) rotate( 0deg );   }
+    to   { transform: scale( 1 ) rotate( 360deg ); }
+}
+
+.row-alert {
+    margin-bottom: 40px;
+}
+
+.graph-panel {
+    height: 250px;
+}

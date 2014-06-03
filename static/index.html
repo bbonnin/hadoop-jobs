@@ -1,0 +1,89 @@
+<!doctype html>
+<html ng-app="hadoopJobsApp" ng-controller="HadoopJobsCtrl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hadoop Jobs">
+<meta name="author" content="Bruno Bonnin">
+
+<title>Hadoop Jobs</title>
+
+<link href="libs/bootstrap/3.1.1/css/bootstrap-cerulean.min.css" rel="stylesheet" type="text/css"/>
+<link href="libs/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="libs/morris/0.4.3/morris.css" rel="stylesheet" type="text/css">
+<link href="styles/hadoop-jobs.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/"><i class="fa fa-gear fa-x1"></i> Hadoop Jobs</a>
+            </div>
+            
+            <div class="collapse navbar-collapse" ng-controller="NavbarController">
+                <ul class="nav navbar-nav">
+                    <li ng-class="{ active : isActive('/') || isActive('/jobs') }"><a href="#/jobs">Jobs list</a></li>
+                    <li ng-class="{ active : isActive('/job') }"><a href="#/job">Job detail</a></li>
+                </ul>
+                <form class="navbar-form pull-right">
+                    <button type="button" id="clusterBtn" class="btn btn-success" data-toggle="modal" data-target="#chooseCluster">Cluster "{{cluster}}"</button>
+                </form>
+            </div>
+        
+        </div>
+    </div>    
+
+    <div class="row-alert" ng-show="alerts.length > 0">
+        <div class="col-md-6 col-md-offset-3">
+            <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+        </div>
+    </div>
+
+    <div id="chooseCluster" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="modalLabel">Hadoop cluster</h4>
+                </div>
+                <div class="modal-body">
+                    <select id="clusterChoice" class="form-control" ng-model="selectedCluster" ng-options="cluster for cluster in clusters">
+                        <option value="">-- Select your cluster --</option>
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
+                    <a href="#" class="btn btn-primary" ng-click="checkCluster()">OK</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ng-view></ng-view>
+
+    <script src="libs/jquery/2.1.0/jquery-2.1.0.min.js"></script>
+    <script src="libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="libs/angularjs/1.2.16/angular-resource.min.js"></script>
+    <script src="libs/angularjs/1.2.16/angular-route.min.js"></script>
+    <script src="libs/angularjs/1.2.16/angular-cookies.min.js"></script>
+    <script src="libs/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="libs/angular-ui/0.11.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="libs/raphael/2.1.2/raphael-2.1.2-min.js"></script>
+    <script src="libs/morris/0.4.3/morris.min.js"></script>
+
+    <script src="scripts/controllers/navbar.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/joblist.js"></script>
+    <script src="scripts/controllers/job.js"></script>
+
+</body>
+</html>
+

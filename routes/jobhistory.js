@@ -1,6 +1,14 @@
 var http = require("http");
 var config = require("../config.json");
 
+var testMode = process.argv.length > 2 && process.argv[2] === 'test';
+console.log("Test mode = " + testMode);
+console.log(process.argv.length);
+console.log(process.argv[1]);
+var testJobs = require("../test/jobs.json");
+var testJob = require("../test/job.json");
+var testJobAttempts = require("../test/job_attempts.json");
+
 var BASE_PATH = "/ws/v1/history/mapreduce/jobs";
 
 var options = {
@@ -33,7 +41,12 @@ function getJobAttempts(req, resp) {
     options.path = BASE_PATH + "/" + jobId + "/tasks";
     options.hostname = config.clusters[cluster].host;
 
-    sendRequest(processJobTasks, { clientResponse : resp, jobId : jobId, cluster : cluster });
+    if (testMode) {
+        resp.send(testJobAttempts);
+    }
+    else {
+        sendRequest(processJobTasks, { clientResponse : resp, jobId : jobId, cluster : cluster });
+    }
 }
 
 /**
@@ -87,7 +100,12 @@ function getJobInfo(req, resp) {
     options.path = BASE_PATH + "/" + jobId;
     options.hostname = config.clusters[cluster].host;
 
-    sendRequest(processJobInfo, resp);
+    if (testMode) {
+        resp.send(testJob);
+    }
+    else {
+        sendRequest(processJobInfo, resp);
+    }
 }
 
 /**
@@ -111,7 +129,12 @@ function getJobList(req, resp) {
     options.path = BASE_PATH;
     options.hostname = config.clusters[req.params.cluster].host;
 
-    sendRequest(processJobList, resp);
+    if (testMode) {
+        resp.send(testJobs);
+    }
+    else {
+        sendRequest(processJobList, resp);
+    }
 }
 
 /**

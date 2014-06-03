@@ -1,0 +1,72 @@
+[
+  {
+    "submitTime": 1401289541329,
+    "startTime": 1401289546730,
+    "finishTime": 1401289554712,
+    "id": "job_1401271537322_0001",
+    "name": "oozie:launcher:T=map-reduce:W=map-reduce-wf:A=mr-n",
+    "queue": "default",
+    "user": "ambari-qa",
+    "state": "SUCCEEDED",
+    "mapsTotal": 1,
+    "mapsCompleted": 1,
+    "reducesTotal": 0,
+    "reducesCompleted": 0
+  },
+  {
+    "submitTime": 1401289553999,
+    "startTime": 1401289559052,
+    "finishTime": 1401289573708,
+    "id": "job_1401271537322_0002",
+    "name": "oozie:action:T=map-reduce:W=map-reduce-wf:A=mr-nod",
+    "queue": "default",
+    "user": "ambari-qa",
+    "state": "SUCCEEDED",
+    "mapsTotal": 1,
+    "mapsCompleted": 1,
+    "reducesTotal": 10,
+    "reducesCompleted": 10
+  },
+  {
+    "submitTime": 1401720172500,
+    "startTime": 1401720165720,
+    "finishTime": 1401720173837,
+    "id": "job_1401718527690_0003",
+    "name": "oozie:launcher:T=map-reduce:W=map-reduce-wf:A=mr-n",
+    "queue": "default",
+    "user": "ambari-qa",
+    "state": "SUCCEEDED",
+    "mapsTotal": 1,
+    "mapsCompleted": 1,
+    "reducesTotal": 0,
+    "reducesCompleted": 0
+  },
+  {
+    "submitTime": 1401720185128,
+    "startTime": 1401720190147,
+    "finishTime": 1401720205773,
+    "id": "job_1401718527690_0004",
+    "name": "oozie:action:T=map-reduce:W=map-reduce-wf:A=mr-nod",
+    "queue": "default",
+    "user": "ambari-qa",
+    "state": "SUCCEEDED",
+    "mapsTotal": 1,
+    "mapsCompleted": 1,
+    "reducesTotal": 10,
+    "reducesCompleted": 10
+  },
+  {
+    "submitTime": 1401720233186,
+    "startTime": 1401720237561,
+    "finishTime": 1401720243536,
+    "id": "job_1401718527690_0005",
+    "name": "PigLatin:pigSmoke.sh",
+    "queue": "default",
+    "user": "ambari-qa",
+    "state": "SUCCEEDED",
+    "mapsTotal": 1,
+    "mapsCompleted": 1,
+    "reducesTotal": 0,
+    "reducesCompleted": 0
+  }
+]

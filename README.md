@@ -34,8 +34,14 @@ Edit the config.json file to set your Hadoop clusters:
 
 ## Run
 
+* Normal mode : 
 ``` bash
     node app.js
+```
+
+* Test mode (it will use json files present in the "test" directory) : 
+``` bash
+    node app.js test
 ```
 
 ## Examples

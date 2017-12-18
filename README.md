@@ -5,6 +5,10 @@ Web interface for Hadoop jobs. This application gives some stats about job, such
 
 The application has been tested with [Hortonworks Data Platform 2.1](http://hortonworks.com/hdp/).
 
+> Last tests:
+> * with Cloudera CDH 5.7
+> * with Hadoop 3.0.0 (using https://github.com/bbonnin/docker-hadoop-3)
+
 
 ## Installation
 
